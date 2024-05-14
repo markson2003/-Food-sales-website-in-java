@@ -1,0 +1,120 @@
+<form method="post" enctype="multipart/form-data" th:action="@{/admin/sanpham/sua}" th:object="${dl}">
+    <div class="container-fluid pt-4 px-4" style="padding-bottom: 50px;">
+        <div class="bg-light text-center rounded p-4">
+            <div class="d-flex align-items-center justify-content-between">
+                <h2 class="mb-0">Cập Nhật</h2>
+                <input type="hidden" th:field="*{Id}"/>
+            </div>
+            <div class="table-responsive">  
+    
+                <table class="table text-dark text-start align-middle table-bordered table-hover" th:object="${dl}">
+                    <tr>
+<<<<<<< HEAD
+                        <td rowspan="8" style="width: 40%; text-align:center;">
+                            <div>
+                                <img style="height: 280px; width: 280px; object-fit: cover;" th:src="*{anhSanPham}">
+                            </div>
+                            <br>
+                            <input type="file" th:field="*{fileSp}" required/>
+=======
+                        <td rowspan="8" style="width: 30%; text-align:center;">
+                            <div style="max-height: 280px; max-width: 280px; overflow: hidden;">
+                                <img style="height: auto; width: 100%; object-fit: cover;" th:src="*{anhSanPham}">
+                            </div>
+                            <br>
+                            <input type="file" th:field="*{fileSp}" />
+>>>>>>> 4190f12894e89afedae1742272adcaee23e6eb7e
+                        </td>
+                        <td>            
+                            <p>
+                                <strong>Tên Sản Phẩm:</strong>
+                                <input type="text" th:field="*{tenSanPham}" />
+                            </p>
+                                        
+                        </td>
+                    </tr>
+                    <tr>
+                        <td >            
+                            <p>
+<<<<<<< HEAD
+                                <strong>Giá(Đ):</strong> 
+=======
+                                <strong>Giá($):</strong> 
+>>>>>>> 4190f12894e89afedae1742272adcaee23e6eb7e
+                                <input type="text" th:field="*{donGia}"/>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        
+                        <td>            
+                            <p>
+                                <strong>Danh Mục:</strong>
+                                <select th:field="*{maDanhMuc}">
+                                    <option th:each="dl:${dsdm}" th:value="${dl.Id}" th:text="${dl.tenDanhMuc}"></option>
+                                </select>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        
+                        <td>            
+                            <p>
+                                <strong>Nhà Sản Xuất:</strong>
+                                <select th:field="*{maNhaSanXuat}">
+                                    <option th:each="dl:${dsnsx}" th:value="${dl.Id}" th:text="${dl.tenNhaSanXuat}"></option>
+                                </select>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>            
+                            <p>
+                                <strong>Mô Tả:</strong>
+                                <textarea class="mota" th:field="*{moTa}"></textarea>
+                            </p>
+                        </td>
+                    </tr>
+                    
+                    
+                    <tr>
+                        <td>            
+                            <p><strong>Trạng Thái:</strong>
+                                <select th:field="*{trangThai}">
+                                    <option value="1">Còn Hàng</option>
+                                    <option value="0">Hết Hàng</option>
+                                </select>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>                
+                            <p>
+                                <strong>Bán Chạy:</strong>
+                                <input type="checkbox" th:field="*{banChay}" value="1" />
+                                <label for="banChay"></label>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>            
+                            <p>
+                                <strong>Nổi Bật:</strong>
+                                <input type="checkbox" th:field="*{noiBat}" value="1" />
+                                <label for="noiBat"></label>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+                
+                <div class="text-end">
+                    <button type="submit" class="btn btn-primary">Lưu</button>
+                    <!-- <button type="reset" class="btn btn-outline-primary">Hủy</button> -->
+                    <a th:href="@{/admin/sanpham/duyet}" role="button" class="primary btn btn-outline-primary">Hủy</a>
+                </div>
+            <label>&nbsp;</label>
+            </div>
+        
+        </div>
+    </div>
+</form>

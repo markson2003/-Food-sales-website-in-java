@@ -1,0 +1,50 @@
+
+<div style="background: rgb(84, 154, 177);" th:if="${ADMIN_USER_LOGGED}" th:text="${ADMIN_USER_LOGGED}">
+</div>
+    
+
+<div class="container-fluid pt-4 px-4" style="padding-bottom: 50px;">
+    <a role="button" class="primary" th:href="@{/admin/nhanvien/them}">Thêm Mới</a>
+    <div class="bg-light text-center rounded p-4">
+        <div class="d-flex align-items-center justify-content-between mb-4">
+            <h2 class="mb-0">Danh Sách Nhân Viên</h2>
+        </div>
+        <div class="table-responsive">  
+
+            <table class="table text-dark text-start align-middle table-bordered table-hover mb-0">
+                <thead>
+                    <tr style="background-color: rgb(207, 216, 219);">
+                        <th scope="col">Ảnh Nhân Viên</th>
+                        <th scope="col">Tên Đầy Đủ</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Điện Thoại</th>
+                        <th scope="col">Ngày Tạo</th>
+                        <th scope="col">Mô Tả</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr th:each="dl, dlStat : ${ds}" th:style="${dlStat.index % 2 == 0} ? 'background-color: #f8f9fa;' : 'background-color:rgb(207, 216, 219);'">
+                        <td>
+                            <img style="height: 90px; width: 90px;" th:src="${dl.anhNhanVien}">
+                        </td>
+                        <td th:text="${dl.tenDayDu}"></td>
+                        <td th:text="${dl.email}"></td>
+                        <td th:text="${dl.dienThoai}"></td>
+                        <td th:text="${dl.ngayTaoNV}"></td>
+                        <td th:text="${dl.moTaNhanVien}"></td>
+                        <td>
+                            <a th:href="@{/admin/nhanvien/xem/{id}(id=${dl.Id})}"><i class="fas fa-eye"></i></a>
+                            |
+                            <a th:href="@{/admin/nhanvien/sua(id=${dl.Id})}"><i class="fas fa-edit"></i></a>
+                            |
+                            <a th:href="@{/admin/nhanvien/xoa(id=${dl.Id})}"><i class="fas fa-trash-alt"></i></a>
+                            
+                        </td>
+                    </tr>
+                </tbody>	
+            </table>
+        </div>
+    </div>
+</div>

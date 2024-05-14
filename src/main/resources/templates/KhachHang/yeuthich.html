@@ -1,0 +1,83 @@
+<!-- Single Page Header start -->
+<div class="container-fluid page-header py-5">
+    <h1 class="text-center text-white display-6">Sản Phẩm Yêu Thích</h1>
+    <ol class="breadcrumb justify-content-center mb-0">
+        <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+        <li class="breadcrumb-item active text-white">Sản Phẩm Yêu Thích</li>
+    </ol>
+</div>
+
+
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Ảnh</th>
+                    <th scope="col">Tên</th>
+                    <th scope="col">Giá</th>
+                    <!-- <th scope="col"><i class="fa-solid fa-cart-shopping"></i></th> -->
+                    <th scope="col">Mô Tả</th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="dl: ${ds}" class="text-dark">
+                        
+                        <th scope="row">
+                            <div class="d-flex align-items-center">
+                                <img th:src="${dl.anhSanPham}" class="img-fluid me-5 rounded-circle" style="width: 80px; height: 80px;">
+                            </div>
+                        </th>
+                        <td>
+                            <p class="mb-0 mt-4" th:text="${dl.tenSanPham}"></p>
+                        </td>
+                        <td>
+<<<<<<< HEAD
+                            <p class="mb-0 mt-4">
+                                <span id="formattedNumber" class="formatted-number" th:text="${dl.donGia}"></span>
+                            </p>
+=======
+                            <p class="mb-0 mt-4" th:text="'$'+ ${dl.donGia} +'/kg'"></p>
+>>>>>>> 4190f12894e89afedae1742272adcaee23e6eb7e
+                        </td>
+                        
+                        <td>
+                            <p class="mb-0 mt-4" th:text="${#strings.length(dl.moTa) > 105 ? #strings.substring(dl.moTa, 0, 45) + '...' : dl.moTa}"></p>
+                        </td>
+                        <td>
+                            <div class="d-flex align-items-center">
+                               
+                                <a th:href="@{/giohang/them/{id}(id=${dl.Id})}" class="btn me-1 border border-secondary rounded-circle d-flex justify-content-center align-items-center text-warning btn-circle btn-outline-dark mt-4" style="width: 40px; height: 40px;">
+                                    <i class="fa fa-shopping-bag"></i>
+                                </a>
+                               
+                                <a class="btn btn-md rounded-circle bg-light border mt-4 me-1" th:href="@{/wishlist/delete/{id}(id=${dl.Id})}">
+                                    <i class="fa fa-times text-danger"></i>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+</div>
+<!-- Cart Page End -->
+
+<script th:inline="javascript">
+    // Lặp qua mỗi phần tử có class "formatted-number"
+    var formattedNumberElements = document.getElementsByClassName('formatted-number');
+    for (var i = 0; i < formattedNumberElements.length; i++) {
+        var formattedNumberText = formattedNumberElements[i].textContent;
+        // Kiểm tra nếu giá trị là một số hợp lệ
+        if (!isNaN(formattedNumberText)) {
+            // Chuyển đổi giá trị thành số và định dạng lại
+            var formattedNumber = parseFloat(formattedNumberText).toLocaleString('vi-VN');
+            // Thay thế nội dung của phần tử bằng giá trị đã định dạng
+            formattedNumberElements[i].textContent = formattedNumber + 'đ/kg';
+        }
+    }
+</script>

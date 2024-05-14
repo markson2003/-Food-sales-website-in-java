@@ -1,0 +1,513 @@
+
+<div  th:if="${#ctx.session.USER_LOGGED}" th:text="${#ctx.session.USER_LOGGED}">
+</div>
+<!-- banner -->
+<<<<<<< HEAD
+<div class="container-fluid mb-5 hero-header py-4">
+    <div class="container-fluid">
+=======
+<div class="container-fluid mb-5 hero-header">
+    <div class="container">
+>>>>>>> 4190f12894e89afedae1742272adcaee23e6eb7e
+        <div class="row g-5 align-items-center">
+            <div class="col-md-12 col-lg-7">
+                <h4 class="mb-3 text-secondary">100% Sản Phẩm Hữu Cơ</h4>
+                <h1 class="mb-5 display-3 text-primary">Trái Cây Và Rau Củ</h1>
+                <div class="position-relative mx-auto">
+<<<<<<< HEAD
+                    <form method="post" th:action="@{/timkiem}" >
+                        <input class="form-control border-2 border-secondary w-75 py-3 px-4 rounded-pill" name="tensp" type="text" placeholder="Nhập từ khóa">
+                        <button type="submit" class="btn btn-primary border-2 border-secondary py-3 px-4 position-absolute rounded-pill text-white h-100" style="top: 0; right: 25%;">Tìm Kiếm</button>
+                    </form>    
+=======
+                    <input class="form-control border-2 border-secondary w-75 py-3 px-4 rounded-pill" type="number" placeholder="Search">
+                    <button type="submit" class="btn btn-primary border-2 border-secondary py-3 px-4 position-absolute rounded-pill text-white h-100" style="top: 0; right: 25%;">Submit Now</button>
+>>>>>>> 4190f12894e89afedae1742272adcaee23e6eb7e
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-5">
+                <div id="carouselId" class="carousel slide position-relative" data-bs-ride="carousel">
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active rounded">
+                            <img th:src="@{'/images/banner/11a383f1-406e-4c63-bcc2-8c94d3498ae6_banner2.png'}" class="img-fluid w-100 h-100 rounded" alt="First slide">
+                            <a th:href="@{/trangchu}" th:text="${qc[0].tenAnh}" class="btn px-4 py-2 text-white rounded"></a>
+                        </div>
+                        <div th:each="dl,i : ${qc}" class="carousel-item rounded" th:if="${i.index}>0">
+                            <img th:src="${dl.anhQuangCao}" class="img-fluid w-100 h-100 rounded" th:alt="${dl.fileAnh}">
+                            <a th:href="@{/trangchu}" th:text="${dl.tenAnh}" class="btn px-4 py-2 text-white rounded"></a>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselId" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- banner End -->
+
+
+<!-- Featurs Section Start -->
+<div class="container-fluid featurs">
+    <div class="container-fluid">
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+                <div class="featurs-item text-center rounded bg-light p-4">
+                    <div class="featurs-icon btn-square rounded-circle bg-secondary mb-5 mx-auto">
+                        <i class="fas fa-car-side fa-3x text-white"></i>
+                    </div>
+                    <div class="featurs-content text-center">
+                        <h5>Miễn Phí Giao Hàng</h5>
+<<<<<<< HEAD
+                        <p class="mb-0">Với đơn dưới 300.000Đ</p>
+=======
+                        <p class="mb-0">Miễn phí với đơn dưới $300</p>
+>>>>>>> 4190f12894e89afedae1742272adcaee23e6eb7e
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="featurs-item text-center rounded bg-light p-4">
+                    <div class="featurs-icon btn-square rounded-circle bg-secondary mb-5 mx-auto">
+                        <i class="fas fa-user-shield fa-3x text-white"></i>
+                    </div>
+                    <div class="featurs-content text-center">
+                        <h5>Thanh toán an toàn</h5>
+                        <p class="mb-0">100% bảo mật</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="featurs-item text-center rounded bg-light p-4">
+                    <div class="featurs-icon btn-square rounded-circle bg-secondary mb-5 mx-auto">
+                        <i class="fas fa-exchange-alt fa-3x text-white"></i>
+                    </div>
+                    <div class="featurs-content text-center">
+                        <h5>Lỗi Sản Phẩm</h5>
+                        <p class="mb-0">Hoàn tiền trong 3 ngày</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="featurs-item text-center rounded bg-light p-4">
+                    <div class="featurs-icon btn-square rounded-circle bg-secondary mb-5 mx-auto">
+                        <i class="fa fa-phone-alt fa-3x text-white"></i>
+                    </div>
+                    <div class="featurs-content text-center">
+                        <h5>Hỗ trợ 24/7</h5>
+                        <p class="mb-0">Hỗ trợ nhanh chóng</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Featurs Section End -->
+
+
+<!-- sản phẩm Start-->
+<div class="container-fluid fruite">
+    <div class="container-fluid py-5">
+        <div class="tab-class text-center">
+            <div class="row g-4">
+                <div class="col-lg-4 text-start">
+                    <h1>Sản Phẩm</h1>
+                </div>
+            </div>
+            <div class="tab-content">
+                <div id="tab-1" class="tab-pane fade show p-0 active">
+                    <div class="row g-4">
+                        <div class="col-lg-12">
+                            <div class="row g-4">
+                                <!-- thêm thông tin sản phẩm -->
+                                
+                                <div class="col-md-6 col-lg-4 col-xl-3" th:each="dl, iterStat : ${sp}" th:if="${iterStat.index < 8}">
+
+                                    <a th:href="@{/chitietsanpham/{id}(id=${dl.Id})}">
+                                        <div class="rounded position-relative fruite-item">
+                                            <div class="fruite-img">
+                                                <img th:src="${dl.anhSanPham}" class="img-fluid w-100 rounded-top" style=" height: 300px;" alt="">
+                                            </div>
+                                            <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;" th:text="${dl.dm.tenDanhMuc}"></div>
+                                            <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                                <h4 th:text="${dl.tenSanPham}"></h4>
+<<<<<<< HEAD
+                                                <p th:text="${#strings.length(dl.moTa) > 105 ? #strings.substring(dl.moTa, 0, 42) + '...' : dl.moTa}"></p>
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <div>
+                                                        <p class="text-dark fs-5 fw-bold mb-0 me-3">
+                                                            <!-- Kiểm tra và định dạng chỉ khi dl.donGia là một số nguyên hợp lệ -->
+                                                            <span th:if="${dl.donGia != null}">
+                                                                <!-- Thực hiện việc thêm dấu chấm sau mỗi ba chữ số bằng JavaScript -->
+                                                                <span id="formattedNumber" class="formatted-number" th:text="${dl.donGia}"></span>
+                                                            </span>
+                                                            <!-- Xử lý trường hợp dl.donGia không hợp lệ -->
+                                                            <span th:unless="${dl.donGia != null}">
+                                                                Giá không khả dụng
+                                                            </span>
+                                                        </p>
+=======
+                                                <p th:text="${#strings.length(dl.moTa) > 105 ? #strings.substring(dl.moTa, 0, 45) + '...' : dl.moTa}"></p>
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <div>
+                                                        <p class="text-dark fs-5 fw-bold mb-0 me-3" th:text="'$' + ${dl.donGia} + '/kg'"></p>
+>>>>>>> 4190f12894e89afedae1742272adcaee23e6eb7e
+                                                    </div>
+                                                    <div class="d-flex align-items-center">
+                                                        <a th:href="@{/wishlist/add/{id}(id=${dl.Id})}" class="btn btn-circle d-flex justify-content-center align-items-center me-1" style="width: 40px; height: 40px; border-radius: 50%; background: radial-gradient(circle, #81c408 0%, #81c408 100%);">
+                                                            <i class="fa fa-heart text-white"></i>
+                                                        </a>
+                                                        <a th:href="@{/giohang/them/{id}(id=${dl.Id})}" class="btn border border-secondary rounded-circle d-flex justify-content-center align-items-center text-primary" style="width: 40px; height: 40px;">
+                                                            <i class="fa fa-shopping-bag text-primary"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>      
+    </div>
+</div>
+<!-- sản phẩm End-->
+
+
+<!-- Featurs Start -->
+<div class="container-fluid service">
+    <div class="container-fluid">
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-6 col-lg-4">
+                <a href="#">
+                    <div class="service-item bg-secondary rounded border border-secondary">
+                        <img src="/KhachHang/img/featur-1.jpg" class="img-fluid rounded-top w-100" alt="">
+                        <div class="px-4 rounded-bottom">
+                            <div class="service-content bg-primary text-center p-4 rounded">
+                                <h5 class="text-white">Táo Tươi</h5>
+                                <h3 class="mb-0">Giảm Giá 45%</h3>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <a href="#">
+                    <div class="service-item bg-dark rounded border border-dark">
+                        <img src="/KhachHang/img/featur-2.jpg" class="img-fluid rounded-top w-100" alt="">
+                        <div class="px-4 rounded-bottom">
+                            <div class="service-content bg-light text-center p-4 rounded">
+                                <h5 class="text-primary">Trái Cây</h5>
+                                <h3 class="mb-1">Giao Hàng Miễn Phí</h3>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <a href="#">
+                    <div class="service-item bg-primary rounded border border-primary">
+                        <img src="/KhachHang/img/featur-3.jpg" class="img-fluid rounded-top w-100" alt="">
+                        <div class="px-4 rounded-bottom">
+                            <div class="service-content bg-secondary text-center p-4 rounded">
+                                <h5 class="text-white">Rau Tươi</h5>
+                                <h3 class="mb-0">Giảm Giá 30%</h3>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Featurs End -->
+
+
+<!-- Vesitable Shop Start-->
+
+<div class="container-fluid vesitable">
+<<<<<<< HEAD
+    <div class="container-fluid py-5">
+=======
+    <div class="container py-5">
+>>>>>>> 4190f12894e89afedae1742272adcaee23e6eb7e
+        <h1 class="mb-0">Sản Phẩm Nổi Bật</h1>
+        <div class="vesitable">
+            <div class="owl-carousel vegetable-carousel justify-content-center">
+                <div class="rounded position-relative vesitable-item" th:each="dl : ${sp}" th:if="${dl.noiBat}">
+                    <a th:href="@{/chitietsanpham/{id}(id=${dl.Id})}">
+                        <div class="vesitable-img">
+                            <img th:src="${dl.anhSanPham}" class="img-fluid w-100 rounded-top" style=" height: 300px;">
+                        </div>
+                        <div class="text-white bg-primary px-3 py-1 rounded position-absolute" style="top: 10px; right: 10px;" th:text="${dl.dm.tenDanhMuc}"></div>
+                        <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                            <h4 th:text="${dl.tenSanPham}"></h4>
+<<<<<<< HEAD
+                            <p th:text="${#strings.length(dl.moTa) > 105 ? #strings.substring(dl.moTa, 0, 42) + '...' : dl.moTa}"></p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <p class="text-dark fs-5 fw-bold mb-0 me-3">
+                                        <!-- Kiểm tra và định dạng chỉ khi dl.donGia là một số nguyên hợp lệ -->
+                                        <span th:if="${dl.donGia != null}">
+                                            <!-- Thực hiện việc thêm dấu chấm sau mỗi ba chữ số bằng JavaScript -->
+                                            <span id="formattedNumber" class="formatted-number" th:text="${dl.donGia}"></span>
+                                        </span>
+                                        <!-- Xử lý trường hợp dl.donGia không hợp lệ -->
+                                        <span th:unless="${dl.donGia != null}">
+                                            Giá không khả dụng
+                                        </span>
+                                    </p>
+=======
+                            <p th:text="${#strings.length(dl.moTa) > 105 ? #strings.substring(dl.moTa, 0, 45) + '...' : dl.moTa}"></p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <p class="text-dark fs-5 fw-bold mb-0 me-3" th:text="'$' + ${dl.donGia} + '/kg'"></p>
+>>>>>>> 4190f12894e89afedae1742272adcaee23e6eb7e
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <a th:href="@{/wishlist/add/{id}(id=${dl.Id})}" class="btn btn-circle d-flex justify-content-center align-items-center me-1" style="width: 40px; height: 40px; border-radius: 50%; background: radial-gradient(circle, #81c408 0%, #81c408 100%);">
+                                        <i class="fa fa-heart text-white"></i>
+                                    </a>
+                                    <a th:href="@{/giohang/them/{id}(id=${dl.Id})}" class="btn border border-secondary rounded-circle d-flex justify-content-center align-items-center text-primary" style="width: 40px; height: 40px;">
+                                        <i class="fa fa-shopping-bag text-primary"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Vesitable Shop End -->
+
+
+<!-- Banner Section Start-->
+<div class="container-fluid banner bg-secondary">
+    <div class="container-fluid">
+        <div class="row g-4 align-items-center">
+            <div class="col-lg-6">
+                <div class="py-4">
+                    <h1 class="display-3 text-white">Trái cây tươi</h1>
+                    <p class="fw-normal display-3 text-dark mb-4">trong cửa hàng của chúng tôi</p>
+                    <!-- <p class="mb-4 text-dark">The generated Lorem Ipsum is therefore always free from repetition injected humour, or non-characteristic words etc.</p> -->
+                    <a th:href="@{/sanpham}" class="banner-btn btn border-2 border-white rounded-pill text-dark py-3 px-5">Mua</a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="position-relative">
+                    <img src="/KhachHang/img/baner-1.png" class="img-fluid w-100 rounded" alt="">
+<<<<<<< HEAD
+                    <div class="d-flex align-items-center justify-content-center bg-white rounded-circle position-absolute" style="width: 180px; height: 180px; top: 0; left: 0;">
+                        <h1 style="font-size: 100px;">1</h1>
+
+                        <div class="d-flex flex-column">
+                            <span class="h2 mb-0">50.000Đ</span>
+=======
+                    <div class="d-flex align-items-center justify-content-center bg-white rounded-circle position-absolute" style="width: 140px; height: 140px; top: 0; left: 0;">
+                        <h1 style="font-size: 100px;">1</h1>
+
+                        <div class="d-flex flex-column">
+                            <span class="h2 mb-0">50$</span>
+>>>>>>> 4190f12894e89afedae1742272adcaee23e6eb7e
+                            <span class="h4 text-muted mb-0">kg</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Banner Section End -->
+
+
+<!-- Bestsaler Product Start -->
+<div class="container-fluid">
+<<<<<<< HEAD
+    <div class="container-fluid py-5">
+=======
+    <div class="container py-5">
+>>>>>>> 4190f12894e89afedae1742272adcaee23e6eb7e
+        <div class="text-center mx-auto mb-5" style="max-width: 700px;">
+            <h1 class="display-4">Sản Phẩm Bán Chạy</h1>
+            <p>Đây là những sản phẩm đang được ưu chuộng, tìm kiếm và có lượt bán nhiều nhất .</p>
+        </div>
+        <div class="row g-4">
+            <div th:each="dl, iterStat : ${sp}" th:if="${dl.banChay}" th:unless="${iterStat.index > 10}" class="col-lg-6 col-xl-4">
+                <div class="p-4 rounded bg-light">
+                    <div class="row align-items-center">
+                        <div class="row">
+                            <div class="col-6">
+                                <a th:href="@{/chitietsanpham/{id}(id=${dl.Id})}">
+                                    <img th:src="${dl.anhSanPham}" class="img-fluid rounded-circle w-100" style="height: 190px;" alt="">
+                                </a>
+                            </div>
+                            <div class="col-6">
+                                <a th:href="@{/chitietsanpham/{id}(id=${dl.Id})}" class="h5" th:text="${dl.tenSanPham}"></a>
+                                <div class="d-flex my-3">
+                                    <a th:href="@{/chitietsanpham/{id}(id=${dl.Id})}" th:text="${#strings.length(dl.moTa) > 105 ? #strings.substring(dl.moTa, 0, 10) + '...' : dl.moTa}"></a>
+                                </div>
+                                <div>
+<<<<<<< HEAD
+                                    <p class="text-dark fs-5 fw-bold mb-0 me-3">
+                                        <!-- Kiểm tra và định dạng chỉ khi dl.donGia là một số nguyên hợp lệ -->
+                                        <span th:if="${dl.donGia != null}">
+                                            <!-- Thực hiện việc thêm dấu chấm sau mỗi ba chữ số bằng JavaScript -->
+                                            <span id="formattedNumber" class="formatted-number" th:text="${dl.donGia}"></span>
+                                        </span>
+                                        <!-- Xử lý trường hợp dl.donGia không hợp lệ -->
+                                        <span th:unless="${dl.donGia != null}">
+                                            Giá không khả dụng
+                                        </span>
+                                    </p>
+=======
+                                    <p class="text-dark fs-5 fw-bold mb-0 me-3" th:text="'$' + ${dl.donGia} + '/kg'"></p>
+>>>>>>> 4190f12894e89afedae1742272adcaee23e6eb7e
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <a th:href="@{/wishlist/add/{id}(id=${dl.Id})}" class="btn btn-circle d-flex justify-content-center align-items-center me-1" style="width: 40px; height: 40px; border-radius: 50%; background: radial-gradient(circle, #81c408 0%, #81c408 100%);">
+                                        <i class="fa fa-heart text-white"></i>
+                                    </a>
+                                    <a th:href="@{/giohang/them/{id}(id=${dl.Id})}" class="btn border border-secondary rounded-circle d-flex justify-content-center align-items-center text-primary" style="width: 40px; height: 40px;">
+                                        <i class="fa fa-shopping-bag text-primary"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+<!-- Bestsaler Product End -->
+
+
+<!-- Fact Start -->
+<div class="container-fluid">
+<<<<<<< HEAD
+    <div class="container-fluid">
+=======
+    <div class="container">
+>>>>>>> 4190f12894e89afedae1742272adcaee23e6eb7e
+        <div class="bg-light p-5 rounded">
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="counter bg-white rounded p-4">
+                        <i class="fas fa-smile fa-3x text-secondary"></i>
+                        <h4>Khách Hàng Hài Lòng</h4>
+                        <h1>1963</h1>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="counter bg-white rounded p-4">
+                        <i class="fa fa-star text-secondary"></i>
+                        <h4>Chất Lượng Dịch Vụ</h4>
+                        <h1>99%</h1>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="counter bg-white rounded p-4">
+                        <i class="fa fa-certificate text-secondary"></i>
+                        <h4>Chất Lượng Sản Phẩm</h4>
+                        <h1>99%</h1>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="counter bg-white rounded p-4">
+                        <i class="fa fa-shopping-cart text-secondary"></i>
+                        <h4>Sản Phẩm Có Sẵn</h4>
+                        <h1>789000</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Fact Start -->
+
+
+<!-- Tastimonial Start -->
+<div class="container-fluid testimonial">
+    <div class="container-fluid py-4">
+        <div class="testimonial-header text-center">
+            <h4 class="text-primary">Phản Hồi</h4>
+            <h1 class="display-5 mb-5 text-dark">Khách Hàng Phản Hồi!</h1>
+        </div>
+        <div class="owl-carousel testimonial-carousel">
+            <div th:each="dl : ${bl}" class="testimonial-item img-border-radius bg-light rounded p-4">
+                <div class="position-relative">
+<<<<<<< HEAD
+                    <div class="d-flex align-items-center flex-nowrap">
+                        <div class="bg-secondary rounded">
+                            <img src="https://nhadepso.com/wp-content/uploads/2023/03/cap-nhat-99-hinh-anh-avatar-gau-cute-de-thuong-ngo-nghinh_5.jpg" class="img-fluid rounded" style="width: 70px; height: 70px;" alt="">
+=======
+                    <i class="fa fa-quote-right fa-2x text-secondary position-absolute" style="bottom: 30px; right: 0;"></i>
+                    <div class="mb-4 pb-4 border-bottom border-secondary">
+                        <p class="mb-0" th:text="${dl.noiDung}"></p>
+                    </div>
+                    <div class="d-flex align-items-center flex-nowrap">
+                        <div class="bg-secondary rounded">
+                            <img src="https://nhadepso.com/wp-content/uploads/2023/03/cap-nhat-99-hinh-anh-avatar-gau-cute-de-thuong-ngo-nghinh_5.jpg" class="img-fluid rounded" style="width: 100px; height: 100px;" alt="">
+>>>>>>> 4190f12894e89afedae1742272adcaee23e6eb7e
+                        </div>
+                        <div class="ms-4 d-block">
+                            <h4 class="text-dark" th:text="${dl.kh.tenDayDu}"></h4>
+                            <!-- <p class="m-0 pb-3">Profession</p> -->
+                            <div class="d-flex pe-5">
+<<<<<<< HEAD
+                              <i class="fa fa-quote-right fa-1x text-secondary position-absolute" style="top: 30px; right: 0;"></i>  
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4 pb-4 border-bottom border-secondary"></div>
+                    <p class="mb-0" th:text="${dl.noiDung}"></p>
+=======
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star text-primary"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+>>>>>>> 4190f12894e89afedae1742272adcaee23e6eb7e
+                </div>
+            </div>
+        </div>
+    </div>
+<<<<<<< HEAD
+</div>
+
+<script th:inline="javascript">
+    // Lặp qua mỗi phần tử có class "formatted-number"
+    var formattedNumberElements = document.getElementsByClassName('formatted-number');
+    for (var i = 0; i < formattedNumberElements.length; i++) {
+        var formattedNumberText = formattedNumberElements[i].textContent;
+        // Kiểm tra nếu giá trị là một số hợp lệ
+        if (!isNaN(formattedNumberText)) {
+            // Chuyển đổi giá trị thành số và định dạng lại
+            var formattedNumber = parseFloat(formattedNumberText).toLocaleString('vi-VN');
+            // Thay thế nội dung của phần tử bằng giá trị đã định dạng
+            formattedNumberElements[i].textContent = formattedNumber + 'đ/kg';
+        }
+    }
+</script>
+=======
+</div>
+>>>>>>> 4190f12894e89afedae1742272adcaee23e6eb7e
